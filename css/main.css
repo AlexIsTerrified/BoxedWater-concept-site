@@ -1,0 +1,760 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Work Sans";
+  background: linear-gradient(to bottom, #159fb4 50%, #4ca9df 100%);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.window-loader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: #159fb4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  backdrop-filter: blur(12px);
+  box-sizing: border-box;
+  padding: 20px 28px;
+  z-index: 3;
+  display: flex;
+  overflow: hidden;
+  background: #ccc8;
+}
+
+nav .logo {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: Center;
+}
+
+nav .logo a svg {
+  width: 76px;
+  height: 63px;
+  fill: #222;
+  transition: 0.3s;
+}
+
+nav .logo a svg:hover {
+  color: #666;
+  transform: scale(1.1);
+}
+
+nav .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+
+nav .menu a .option {
+  display: flex;
+  padding: 0 18px;
+  justify-content: Center;
+  align-items: center;
+  color: #222;
+  font-size: large;
+  text-transform: uppercase;
+  font-family: "Saira Extra Condensed", sans-serif;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav .menu a .option:hover {
+  color: #444;
+  transform: Scale(1.1);
+}
+
+nav .account {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav .account a svg {
+  display: flex;
+  justify-content: Center;
+  align-items: center;
+  padding: 0 22px;
+  width: 28px;
+  height: 28px;
+  fill: #000;
+}
+
+nav .account a svg path {
+  fill: #000;
+}
+
+nav .account a:hover svg {
+  fill: #444;
+  transform: Scale(1.1);
+}
+
+nav .account a:hover svg path {
+  fill: #444;
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  max-height: 800px;
+  overflow: hidden;
+}
+
+.owl-stage {
+  height: 100%;
+  display: flex;
+  transition: 1s !important;
+}
+
+.header .owl-carousel .head-1 {
+  background: url(../images/head-2.jpg);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.header .owl-carousel .head-2 {
+  background: url(../images/head-3.jpg);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.header .owl-carousel .head-3 {
+  background: url(../images/head-1.jpg);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.owl-carousel .owl-nav {
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.owl-carousel:hover .owl-nav {
+  opacity: 1;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  top: 0;
+  font-size: 50px;
+  outline: 0;
+  display: flex;
+  justify-content: Center;
+  align-items: center;
+  font-family: monospace;
+  font-weight: 100;
+  font-size: 4rem;
+  border: none;
+  cursor: pointer;
+  text-shadow: 0 0 10px #000;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: 0;
+  background: linear-gradient(270deg, #0000, transparent);
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+  background: linear-gradient(90deg, #0000, transparent);
+}
+
+.owl-carousel .owl-nav button.owl-next:hover, .owl-carousel .owl-nav button.owl-prev:hover {
+  font-size: 5rem;
+}
+
+.owl-carousel .owl-dots {
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.owl-carousel .owl-dots button {
+  width: 50px;
+  border: none;
+  outline: none;
+  height: 4px;
+  background: #000;
+  margin: 0 10px;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.owl-carousel:hover .owl-dots button {
+  opacity: 1;
+}
+
+.owl-carousel .owl-dots button:hover {
+  transform: scale(1.2);
+}
+
+.owl-carousel .owl-dots .active {
+  background: #ccc;
+}
+
+.header .owl-carousel .head {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.header .owl-carousel .head .left {
+  background: #0004;
+  padding: 130px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: start;
+}
+
+.header .owl-carousel .head .left h1 {
+  font-size: 4rem;
+  font-family: "Saira Extra Condensed", sans-serif;
+  margin: 0;
+  line-height: 4rem;
+  color: #ccc;
+  text-shadow: 0 0 15px black;
+}
+
+.header .owl-carousel .head .left p {
+  font-size: large;
+  color: #ccc;
+  max-width: 800px;
+}
+
+.header .owl-carousel .head .left li {
+  display: flex;
+  padding: 14px 0;
+}
+
+.header .owl-carousel .head .left li a svg {
+  fill: #111;
+  transform: none;
+  margin-right: 10px;
+  background: #ccc6;
+  backdrop-filter: blur(10px);
+  width: 32px;
+  padding: 4px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+.header .owl-carousel .head .left li a:hover svg {
+  fill: #000;
+  transform: scale(1.04);
+}
+
+.header .owl-carousel .head .left li a:hover svg path {
+  fill: #000;
+}
+
+.pulse-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 60px;
+  font-size: larger;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #000;
+  border: none;
+  border-radius: 0;
+  backdrop-filter: blur(10px);
+  font-family: "Saira Extra Condensed", sans-serif;
+  background: #ccc6;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(204, 204, 204, 0.5);
+  -webkit-animation: pulse 1.5s infinite;
+}
+
+.pulse-button:hover {
+  -webkit-animation: none;
+  box-shadow: 0 0 5px #ccc;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(204, 204, 204, 0);
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(204, 204, 204, 0);
+  }
+}
+.body {
+  max-width: 1060px;
+  min-height: 800px;
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  transform: translateY(-80px);
+}
+
+.body .page {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 0 0 38px;
+}
+
+.body .page section {
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+.impact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 14px;
+  align-items: center;
+}
+
+.impact h2 {
+  font-family: "Saira Extra Condensed", sans-serif;
+  text-align: Center;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+.impact .items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.impact .items .item {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  padding: 22px;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 30px #0003;
+  margin: 14px;
+}
+
+.impact .items .item div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 240px;
+}
+
+.impact .items .item div img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.impact .items .item div span {
+  padding: 22px 0 0 0;
+}
+
+.impact a button {
+  outline: none;
+  border: 1px solid #111;
+  padding: 14px;
+  color: #111;
+  background: #0000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.impact a button:hover {
+  background: #0008;
+  transform: scale(1.1);
+}
+
+.solution {
+  display: flex;
+  width: 100%;
+  height: 500px;
+}
+
+.solution .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding: 0 30px;
+}
+
+.solution .info b {
+  border-left: 2px double #17a5e1;
+  padding: 10px;
+}
+
+.solution .image {
+  background-image: url("../images/solution.jpg");
+  background-size: contain;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.join-us {
+  background: linear-gradient(to bottom, #159fb4 50%, #4ca9df 100%) fixed;
+  display: flex;
+}
+
+.join-us .info {
+  flex: 1;
+  display: flex;
+  flex-direciton: column;
+  justify-content: center;
+}
+
+.join-us .image {
+  width: 280px;
+}
+
+.your-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: linear-gradient(to bottom, #159fb4 50%, #4ca9df 100%);
+  padding: 22px;
+  box-sizing: border-box;
+  color: #ccc;
+}
+
+.your-part .row {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  height: 300px;
+  padding: 22px;
+}
+
+.your-part .row:last-child {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.your-part .row:last-child .info {
+  align-items: flex-end;
+}
+
+.your-part .row .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: Center;
+  padding: 14px;
+}
+
+.your-part .row .info input {
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 0 14px;
+  color: #ccc;
+  background: #0000;
+  width: 240px;
+  height: 40px;
+}
+
+.your-part .row .info .send {
+  height: 32px;
+  width: 32px;
+  outline: none;
+  background: #0000;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.your-part .row .info .send svg {
+  height: 30px;
+  width: 30px;
+  background: #0000;
+  fill: #ccc;
+  transform: translate(-10px, -35px);
+}
+
+.your-part .row .info .send svg path {
+  fill: #ccc;
+}
+
+.your-part .row .info a button {
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 14px;
+  color: #ccc;
+  background: #0000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.your-part .row .info a button:hover {
+  background: #0008;
+  transform: scale(1.1);
+}
+
+.your-part .row .image {
+  width: 360px;
+  height: 280px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 10px 10px 30px #0003;
+}
+
+footer {
+  width: 100%;
+  min-height: 600px;
+  background: #111;
+  margin-top: -180px;
+  padding: 120px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #ccc;
+  box-sizing: border-box;
+  font-size: small;
+}
+
+footer .info {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #ccc;
+  padding: 22px 14px;
+}
+
+footer .info div {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 0 14px;
+}
+
+footer .info div a svg {
+  fill: #ccc;
+  width: 76px;
+  height: 63px;
+}
+
+footer .info div a svg path {
+  fill: #ccc;
+}
+
+footer .info div a span {
+  padding: 6px 0;
+  border-bottom: 1px dotted #ccc;
+  transition: 0.3s;
+}
+
+footer .info div a span:hover {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+footer .info .mid {
+  flex: 1;
+  width: auto;
+  font-family: "Saira Extra Condensed", sans-serif;
+  justify-content: space-evenly;
+  font-size: medium;
+}
+
+footer .info .mid li {
+  display: flex;
+  justify-content: space-evenly;
+  color: #ccc;
+  transition: 0.3s;
+}
+
+footer .info .mid li a svg {
+  fill: #111;
+  transform: none;
+  margin-right: 10px;
+  background: #ccc;
+  backdrop-filter: blur(10px);
+  width: 32px;
+  padding: 4px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+footer .info .mid li a:hover svg {
+  fill: #111;
+  transform: scale(1.04);
+}
+
+footer .info .mid li a svg path {
+  fill: #111;
+}
+
+footer .request {
+  justify-content: space-between;
+  display: flex;
+  padding: 42px 14px;
+  font-size: medium;
+}
+
+footer .request div {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .request div span {
+  margin: 14px 0;
+  font-family: "Saira Extra Condensed", sans-serif;
+}
+
+footer .request div a button {
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 14px;
+  color: #ccc;
+  background: #0000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+footer .request div a button:hover {
+  background: #0008;
+  transform: scale(1.1);
+}
+
+.send {
+  height: 32px;
+  width: 32px;
+  outline: none;
+  background: #0000;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+footer .request div input {
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 0 14px;
+  color: #ccc;
+  background: #0000;
+  width: 240px;
+  height: 40px;
+}
+
+footer .request div .send svg {
+  height: 30px;
+  width: 30px;
+  background: #0000;
+  fill: #ccc;
+  transform: translate(200px, -35px);
+}
+
+footer .request div .send svg path {
+  fill: #ccc;
+}
+
+@media only screen and (max-width: 1024px) {
+  .header .owl-carousel .head .left {
+    padding: 130px 14px;
+  }
+
+  .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+    width: 60px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
